@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MOD04_PDC03.ListViewItemSource">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="ListView with ItemSource"
+                VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"/>
+         
+        <ListView x:Name="EmployeeView"
+                  ItemsSource="{Binding Employees}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell  ImageSource="{Binding Image}"
+                                Text="{Binding DisplayName}"
+                                TextColor="Black"
+                                Detail="{Binding Position}"
+                                DetailColor="Gray" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
